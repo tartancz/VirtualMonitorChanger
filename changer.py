@@ -12,12 +12,13 @@ class Buttons(Enum):
     MIDDLE = MIDDLE
 
 class Changer:
-    _events: list[float] = []
+    _events: list[float] = None
     _event = None
     def __init__(self, button: Buttons, number_of_clicks: int, delay_of_clicks: float):
         self.button = button
         self.number_of_clicks = number_of_clicks
         self.delay_of_clicks = delay_of_clicks
+        self._events = []
 
     @staticmethod
     def change_monitor():
